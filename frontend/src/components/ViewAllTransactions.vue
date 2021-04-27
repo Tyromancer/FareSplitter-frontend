@@ -1,5 +1,5 @@
 <template>
-  <b-container>
+  <b-container fluid>
     <b-row v-for="transaction in transactions" :key="transaction.id">
       <b-col>{{ transaction.desc }}</b-col>
       <b-col>{{ transaction.time }}</b-col>
@@ -22,7 +22,9 @@ export default {
   data() {
     return {
       transactions: [],
-      amounts: []
+      amounts: [],
+      poll1: null,
+      poll2: null
     };
   },
   methods: {
@@ -39,8 +41,14 @@ export default {
     }
   },
   created() {
-    this.get_all_transactions();
-    this.get_amounts_due();
+    // this.get_all_transactions();
+    // this.get_amounts_due();
+    this.poll1 = setInterval(this.get_all_transactions, 5000);
+    this.poll2 = setInterval(this.get_amounts_due, 5000);
+  },
+  unmounted() {
+    clearInterval(this.poll1);
+    clearInterval(this.poll2);
   }
 };
 </script>

@@ -1,5 +1,8 @@
 <template>
   <div>
+    <h3>
+      <b-badge variant="primary">Add new Transaction</b-badge>
+    </h3>
     <b-form>
       <b-form-group label="Description:" label-for="desc">
         <b-form-input

@@ -1,40 +1,18 @@
 <template>
-<html lang="en">
-  <head>
-    <title>User Login Page</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="index.css">
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    >
-    <!--
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
-    -->
-  </head>
-  <body>
-    <div class="jumbotron text-center">
-      <h1>Add new user</h1>
-    </div>
+  <div>
+    <h3>
+      <b-badge variant="primary">Add new user</b-badge>
+    </h3>
 
-    <div id="app-6" class="container">
-      <p>{{ message }}</p>
-      <p>
-        <input v-model="username">
-      </p>
-      <button type="submit" @click="save_username()">Submit</button>
-    </div>
-
-    <!--
+    <p>{{ message }}</p>
+    <p>
+      <input v-model="username">
+    </p>
+    <button type="submit" @click="save_username()">Submit</button>
+  </div>
+  <!--
             <script src="index.js"></script>
-    -->
-  </body>
-</html>
+  -->
 </template>
 
 <script>
@@ -57,6 +35,7 @@ export default {
             alert("Success!");
           }
         });
+      this.username = "";
     }
   }
 };
