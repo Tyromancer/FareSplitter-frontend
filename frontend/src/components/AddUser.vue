@@ -6,7 +6,7 @@
 
     <p>{{ message }}</p>
     <p>
-      <input v-model="username">
+      <input v-model="username" />
     </p>
     <button type="submit" @click="save_username()">Submit</button>
   </div>
@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       message: "Please input your username here:",
-      username: ""
+      username: "",
     };
   },
   methods: {
@@ -30,13 +30,13 @@ export default {
       var username_data = { username: this.username };
       axios
         .post("http://127.0.0.1:5000/api/add-user", username_data)
-        .then(res => {
+        .then((res) => {
           if (res.data["msg"] === "ok") {
             alert("Success!");
           }
         });
       this.username = "";
-    }
-  }
+    },
+  },
 };
 </script>

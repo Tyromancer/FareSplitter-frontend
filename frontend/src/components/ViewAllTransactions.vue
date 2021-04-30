@@ -24,21 +24,23 @@ export default {
       transactions: [],
       amounts: [],
       poll1: null,
-      poll2: null
+      poll2: null,
     };
   },
   methods: {
     get_all_transactions() {
-      axios.get("http://127.0.0.1:5000/api/get-all-transactions").then(res => {
-        console.log(res.data);
-        this.transactions = res.data["transactions"];
-      });
+      axios
+        .get("http://127.0.0.1:5000/api/get-all-transactions")
+        .then((res) => {
+          console.log(res.data);
+          this.transactions = res.data["transactions"];
+        });
     },
     get_amounts_due() {
-      axios.get("http://127.0.0.1:5000/api/get-amounts-due").then(res => {
+      axios.get("http://127.0.0.1:5000/api/get-amounts-due").then((res) => {
         this.amounts = res.data["amounts"];
       });
-    }
+    },
   },
   created() {
     // this.get_all_transactions();
@@ -49,6 +51,6 @@ export default {
   unmounted() {
     clearInterval(this.poll1);
     clearInterval(this.poll2);
-  }
+  },
 };
 </script>

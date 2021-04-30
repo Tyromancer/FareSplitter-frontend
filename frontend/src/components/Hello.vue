@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{ msg }}</h1>
-    <view-all-users/>
+    <view-all-users />
   </div>
 </template>
 
@@ -11,18 +11,18 @@ import ViewAllUsers from "./ViewAllUsers.vue";
 export default {
   name: "Hello",
   components: {
-    ViewAllUsers
+    ViewAllUsers,
   },
   data() {
     return {
-      msg: ""
+      msg: "",
     };
   },
   created() {
-    axios.get("http://127.0.0.1:5000/api/hello-world").then(res => {
+    axios.get("http://127.0.0.1:5000/api/hello-world").then((res) => {
       console.log(res);
       this.msg = res.data.msg;
     });
-  }
+  },
 };
 </script>
