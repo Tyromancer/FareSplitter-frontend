@@ -4,33 +4,22 @@
 <div>
 <p>Display data</p>
 </div>
-<div>
-<table id="transaction_table">
-  <tbody>
-    <li v-for="trans in transactions" :key = "trans.id">
-      <td>{{trans.desc}}</td>
-      <td>{{trans.time}}</td>
-    </li>
-  </tbody>
-</table>
 
-<table id="payment_table">
-  <tbody>
-    <li v-for="payment in trans.payments" :key = "payment.id">
-      <td>{{payment.username}}</td>
-      <td>{{payment.amount}}</td>
-    </li>
-  </tbody>
-</table>
+  <b-container>
+    <b-row v-for="trans in transactions" :key = "trans.id">
+      <b-col>{{trans.desc}}</b-col>
+      <b-col>{{trans.time}}</b-col>
+    </b-row>
 
-<table id="amount_table">
-  <tbody>
-    <li v-for="am in amounts" :key = "am.id">
-      <td>{{am.amount}}</td>
-    </li>
-  </tbody>
-</table>
-</div>
+    <b-row v-for="payment in trans.payments" :key = "payment.id">
+      <b-col>{{payment.username}}</b-col>
+      <b-col>{{payment.amount}}</b-col>
+    </b-row>
+
+    <b-row v-for="am in amounts" :key = "am.id">
+      <b-col>{{am.amount}}</b-col>
+    </b-row>
+  <b-container>
 </body>
 </template>
 
