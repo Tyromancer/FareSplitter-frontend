@@ -15,12 +15,12 @@ Code should mainly be “self-commenting” in that keeping code paths and then 
 
 4.All the code should be in the form of 2 indent spaces
 
-5.All the strings should use doule quotes and add period at each end of the line
+5.All the strings should use doule quotes and add semicolon at each end of the line
 
 6.All the open and closed curly braces shouldn't be in the same column 
 Example: ![image](https://github.com/Amurozyh/image/blob/main/04283447660aa0db3ab76d275a85060.jpg)
 
-7.for 6, if the situation is the list of project, curly braces should be in the same column
+7.for 6, if the situation is the list of objects, curly braces should be in the same column
 Example: ![image](https://github.com/Amurozyh/image/blob/main/a43262190e1372851bdd2164dcc000d.jpg)
 
 ## How to submit issues
