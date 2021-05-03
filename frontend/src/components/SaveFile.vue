@@ -1,29 +1,28 @@
 <template>
-<html lang="en">
-  <head>
-    <title>Save Data</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="index.css">
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    >
-  </head>
-  <body>
-    <div class="jumbotron text-center">
-      <h1>Save Data Locally</h1>
-    </div>
+  <html lang="en">
+    <head>
+      <title>Save Data</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="stylesheet" href="index.css" />
+      <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      />
+    </head>
+    <body>
+      <div class="jumbotron text-center">
+        <h1>Save Data Locally</h1>
+      </div>
 
-    <div id="app-6" class="container">
-      <p>
-        <input v-model="username">
-      </p>
-      <button type="Save to local" @click="save_local()">Submit</button>
-    </div>
-
-  </body>
-</html>
+      <div id="app-6" class="container">
+        <p>
+          <input v-model="username" />
+        </p>
+        <button type="Save to local" @click="save_local()">Submit</button>
+      </div>
+    </body>
+  </html>
 </template>
 
 <script>
@@ -47,7 +46,7 @@ export default {
             transaction_data += transactions[i].toString();
             transaction_data += " ";
         }
-        
+
         var amounts = res.data2["amounts"];
         var amount_data = " ";
         for(var i = 0; i<amounts.length; i++)
@@ -58,7 +57,7 @@ export default {
 
         var fso = new ActiveXObject("Scripting.FileSystemObject");
         fso.CreateFolder("Local_data");
-        
+
         const fs = require('fs')
         fs.writeFile('SaveData_username.txt', username, (err) => {
             if (err) throw err;

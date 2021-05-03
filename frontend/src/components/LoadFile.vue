@@ -1,27 +1,26 @@
 <template>
-<html lang="en">
-  <head>
-    <title>Load Data</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="index.css">
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    >
-  </head>
-  <body>
-    <div class="jumbotron text-center">
-      <h1>Load Data</h1>
-    </div>
+  <html lang="en">
+    <head>
+      <title>Load Data</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="stylesheet" href="index.css" />
+      <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      />
+    </head>
+    <body>
+      <div class="jumbotron text-center">
+        <h1>Load Data</h1>
+      </div>
 
-    <div id="app-6" class="container">
-      <input type="file" id = "data_file" name = "filename">
-      <button type="Load" @click="load_data()">Select File</button>
-    </div>
-
-  </body>
-</html>
+      <div id="app-6" class="container">
+        <input type="file" id="data_file" name="filename" />
+        <button type="Load" @click="load_data()">Select File</button>
+      </div>
+    </body>
+  </html>
 </template>
 
 <script>
@@ -35,7 +34,7 @@ export default {
     load_data: function(){
       var file_name = document.getElementById('data_file')
       const fs = require('fs')
-  
+
       fs.readFile('Input.txt', (err, data) => {
         if (err) throw err;
       }
